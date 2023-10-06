@@ -5,15 +5,23 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 var model4984;
 var modelDessicant;
 
+var changeModelButton = document.getElementById("change-model");
+changeModelButton.addEventListener("click", changeModel);
+
+function changeModel()
+{
+	modelDessicant.visible = !modelDessicant.visible;
+	model4984.visible = !model4984.visible;
+	renderer.render(scene, camera);
+}
+
 document.addEventListener("keydown", onDocumentKeyDown, false);
 function onDocumentKeyDown(event) {
     var keyCode = event.which;
 	console.log(keyCode);
 	if (keyCode == 39 || keyCode == 37) // left or right
 	{
-		modelDessicant.visible = !modelDessicant.visible;
-		model4984.visible = !model4984.visible;
-		renderer.render(scene, camera);
+		changeModel();
 	}
 };
 
