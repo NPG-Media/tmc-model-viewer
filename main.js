@@ -42,7 +42,7 @@ scene.add( light );
 const loader = new GLTFLoader();
 
 
-loader.load( '/4984.glb', function ( gltf ) {
+loader.load( './4984.glb', function ( gltf ) {
 
 	var box = new THREE.Box3().setFromObject( gltf.scene );
 	var center = new THREE.Vector3();
@@ -59,7 +59,7 @@ loader.load( '/4984.glb', function ( gltf ) {
 
 } );
 
-loader.load( '/dessicant.glb', function ( gltf ) {
+loader.load( './dessicant.glb', function ( gltf ) {
 
 	var box = new THREE.Box3().setFromObject( gltf.scene );
 	var center = new THREE.Vector3();
